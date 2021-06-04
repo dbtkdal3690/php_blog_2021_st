@@ -56,6 +56,10 @@ class APP__UsrArticleController {
 
     if ( $article == null ) {
       jsHistoryBackExit("${id}번 게시물은 존재하지 않습니다.");
+
+      $this->articleService->increaseHit($id);
+    
+    require_once App__getViewPath("usr/article/detail");
     }
 
     $actorCanDeleteRs = $this->articleService->getActorCanDelete($_REQUEST['App__loginedMember'], $article);

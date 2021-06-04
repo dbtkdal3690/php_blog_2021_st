@@ -23,6 +23,10 @@ class APP__ArticleService {
     $this->articleRepository->modifyArticle($id, $title, $body);
   }
 
+  public function increaseHit($id) { 
+    $this->articleRepository->increaseHit($id);
+  }
+
   public function deleteArticle(int $id) {
     $this->articleRepository->deleteArticle($id);
   }
